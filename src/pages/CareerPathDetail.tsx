@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -94,47 +93,101 @@ const CareerPathDetail = () => {
             <CardContent className="p-6">
               <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-brand-blue-500" />
-                Education Pathway
+                Course Structure & Fee Details
               </h2>
               
               <div className="space-y-6">
-                {pathData.educationPath.map((step, index) => (
-                  <div key={index} className="relative pl-8 border-l-2 border-brand-blue-100 pb-6 last:border-l-0 last:pb-0">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-brand-blue-500"></div>
-                    <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground mb-3">{step.description}</p>
-                    <div className="bg-muted/50 rounded-lg p-4 text-sm">
-                      <h4 className="font-medium mb-2">Key Considerations:</h4>
-                      <ul className="space-y-1 list-disc pl-4">
-                        {step.keyPoints.map((point, i) => (
-                          <li key={i}>{point}</li>
+                <div>
+                  <h3 className="text-xl font-medium mb-3">Duration & Structure</h3>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="bg-muted/50 rounded-lg p-4">
+                      <p className="font-medium mb-2">Duration: {pathData.courseStructure.duration}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {pathData.courseStructure.semesters} with practical training and projects
+                      </p>
+                    </div>
+                    <div className="bg-muted/50 rounded-lg p-4">
+                      <p className="font-medium mb-2">Core Subjects</p>
+                      <ul className="text-sm text-muted-foreground list-disc pl-4">
+                        {pathData.courseStructure.mainSubjects.slice(0, 4).map((subject, index) => (
+                          <li key={index}>{subject}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                ))}
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-medium mb-3">Fee Structure</h3>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-medium mb-2">Government Institutions</h4>
+                      <p className="text-2xl font-semibold text-brand-blue-600 mb-2">
+                        {pathData.feeStructure.undergraduate.government.range}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {pathData.feeStructure.undergraduate.government.notes}
+                      </p>
+                    </div>
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-medium mb-2">Private Institutions</h4>
+                      <p className="text-2xl font-semibold text-brand-blue-600 mb-2">
+                        {pathData.feeStructure.undergraduate.private.range}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {pathData.feeStructure.undergraduate.private.notes}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-4">Entrance Exams & Admissions</h2>
-              <div className="space-y-4">
+              <h2 className="text-xl font-semibold mb-4">Entrance Exams & Scholarships</h2>
+              <div className="space-y-6">
                 {pathData.entranceExams.map((exam, index) => (
                   <div key={index} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
-                    <h3 className="font-medium">{exam.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-2">{exam.description}</p>
-                    <div className="flex flex-wrap gap-2 text-xs">
-                      <span className="px-2 py-1 bg-brand-blue-100 text-brand-blue-700 rounded-full">
-                        Level: {exam.level}
-                      </span>
-                      <span className="px-2 py-1 bg-brand-blue-100 text-brand-blue-700 rounded-full">
-                        Timing: {exam.timing}
-                      </span>
+                    <h3 className="font-medium text-lg mb-2">{exam.name}</h3>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-3">
+                      <div>
+                        <p className="text-sm text-muted-foreground">{exam.description}</p>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <span className="px-2 py-1 bg-brand-blue-100 text-brand-blue-700 text-xs rounded-full">
+                            Level: {exam.level}
+                          </span>
+                          <span className="px-2 py-1 bg-brand-blue-100 text-brand-blue-700 text-xs rounded-full">
+                            Timing: {exam.timing}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="bg-muted/50 rounded-lg p-3">
+                        <p className="text-sm font-medium mb-1">Eligibility</p>
+                        <p className="text-sm text-muted-foreground">{exam.eligibility}</p>
+                        <p className="text-sm font-medium mt-2 mb-1">Fee Waivers & Scholarships</p>
+                        <p className="text-sm text-muted-foreground">{exam.freeShips}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
+
+                <div className="mt-6">
+                  <h3 className="font-medium text-lg mb-3">Available Scholarships</h3>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {pathData.scholarships.map((scholarship, index) => (
+                      <div key={index} className="border rounded-lg p-4">
+                        <h4 className="font-medium mb-1">{scholarship.name}</h4>
+                        <p className="text-brand-blue-600 font-semibold mb-1">{scholarship.amount}</p>
+                        <p className="text-sm text-muted-foreground mb-2">{scholarship.eligibility}</p>
+                        <a href={scholarship.link} className="text-sm text-brand-blue-500 hover:underline">
+                          Learn More →
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -409,172 +462,111 @@ function getPathData(pathId: string | undefined) {
       entranceExams: [
         {
           name: "JEE Main & Advanced",
-          description: "National level engineering entrance exams for admission to IITs, NITs, and other premier engineering institutions",
+          description: "National level engineering entrance exams for IITs, NITs, and other premier institutions",
           level: "National",
-          timing: "Usually conducted 2-4 times a year"
-        },
-        {
-          name: "State Engineering Entrance Exams",
-          description: "State-specific engineering entrance exams for admission to state colleges and universities",
-          level: "State",
-          timing: "Typically after 12th board exams"
+          timing: "Usually conducted 2-4 times a year",
+          eligibility: "12th PCM with minimum 75% marks",
+          freeShips: "SC/ST/PwD candidates get complete fee waiver, merit scholarships available",
+          preparationTips: "Focus on NCERT books, join test series, practice previous papers"
         },
         {
           name: "BITSAT",
-          description: "Entrance exam for admission to BITS Pilani and its campuses",
+          description: "Online entrance test for admission to BITS Pilani campuses",
           level: "National",
-          timing: "Usually in May-June"
+          timing: "Usually in May-June",
+          eligibility: "12th PCM with minimum 75% marks",
+          freeShips: "Merit scholarships available based on BITSAT score",
+          preparationTips: "Practice computer-based tests, focus on speed and accuracy"
         },
         {
-          name: "GATE (For Postgraduate)",
-          description: "Graduate Aptitude Test in Engineering for M.Tech admissions and PSU recruitment",
-          level: "National",
-          timing: "Usually in February"
+          name: "State Engineering CETs",
+          description: "State-level entrance tests for engineering colleges",
+          level: "State",
+          timing: "After board exams (May-June)",
+          eligibility: "12th PCM from respective state board",
+          freeShips: "State government scholarships available for eligible candidates",
+          preparationTips: "Focus on state board syllabus along with entrance exam topics"
         }
       ],
-      skills: {
-        technical: [
-          {
-            name: "Mathematical Aptitude",
-            description: "Strong foundation in mathematics, problem-solving, and quantitative reasoning"
+      
+      feeStructure: {
+        undergraduate: {
+          government: {
+            range: "₹30,000 - ₹1,50,000 per year",
+            details: "Includes tuition, hostel, and other mandatory fees",
+            notes: "Government colleges have subsidized fees"
           },
-          {
-            name: "Scientific Knowledge",
-            description: "Understanding of physical and chemical principles and their applications"
-          },
-          {
-            name: "Analytical Thinking",
-            description: "Ability to analyze complex problems and develop logical solutions"
-          },
-          {
-            name: "Computer Skills",
-            description: "Proficiency in relevant software, programming languages, and technical tools"
+          private: {
+            range: "₹1,00,000 - ₹4,00,000 per year",
+            details: "Includes tuition, development fees, and other charges",
+            notes: "Can vary significantly based on college reputation and location"
           }
-        ],
-        soft: [
-          {
-            name: "Problem-Solving",
-            description: "Identifying and addressing complex issues with effective solutions"
+        },
+        coaching: {
+          jee: {
+            range: "₹25,000 - ₹1,50,000 per year",
+            details: "For JEE preparation coaching",
+            notes: "Many institutes offer scholarships based on entrance tests"
           },
-          {
-            name: "Critical Thinking",
-            description: "Evaluating information objectively to form reasoned judgments"
-          },
-          {
-            name: "Communication",
-            description: "Clearly expressing technical concepts to both technical and non-technical audiences"
-          },
-          {
-            name: "Teamwork",
-            description: "Collaborating effectively in group projects and interdisciplinary teams"
+          extras: {
+            range: "₹5,000 - ₹20,000",
+            details: "For study materials, test series, etc.",
+            notes: "Optional but recommended for better preparation"
           }
-        ]
+        }
       },
-      skillResources: [
+      
+      scholarships: [
         {
-          title: "Problem-Solving Practice Platforms",
-          description: "Online platforms like LeetCode, HackerRank, and Codeforces for developing programming and problem-solving skills",
+          name: "AICTE Pragati Scholarship",
+          amount: "₹50,000 per annum",
+          eligibility: "Girl students from families with income less than 8 lakhs",
           link: "#"
         },
         {
-          title: "Mathematics Mastery Resources",
-          description: "Online courses and tutorials for advanced mathematics topics relevant to engineering and science fields",
+          name: "Central Sector Scheme",
+          amount: "₹10,000 per month",
+          eligibility: "Top 500 ranks in JEE Advanced",
           link: "#"
         },
         {
-          title: "Project-Based Learning",
-          description: "Hands-on projects to apply theoretical knowledge and develop practical engineering skills",
+          name: "State Merit Scholarships",
+          amount: "Varies by state",
+          eligibility: "Based on entrance exam rank and category",
           link: "#"
         }
       ],
-      careerOptions: [
-        {
-          title: "Engineering Careers",
-          description: "Design, develop, and implement solutions to technical problems in various industries",
-          salary: "₹4-25 lakh per annum depending on specialization and experience",
-          growth: "Strong with ongoing infrastructure and technology advancement",
-          environment: "Mix of office, laboratory, and field work depending on specialization"
-        },
-        {
-          title: "Software Development",
-          description: "Design, build, and maintain computer programs and applications",
-          salary: "₹5-30 lakh per annum depending on skills and experience",
-          growth: "Excellent with the continuous digital transformation",
-          environment: "Office or remote work environment with collaborative teams"
-        },
-        {
-          title: "Research & Development",
-          description: "Conduct research to create new knowledge, products, and technologies",
-          salary: "₹4-20 lakh per annum depending on field and institution",
-          growth: "Moderate to strong, especially in emerging technology areas",
-          environment: "Laboratory, academic institutions, or corporate R&D centers"
-        }
-      ],
-      jobProfiles: [
-        {
-          title: "Software Engineer",
-          description: "Develop applications, systems, and software solutions using programming knowledge",
-          skills: ["Programming", "Algorithms", "Data Structures", "Problem Solving"]
-        },
-        {
-          title: "Mechanical Engineer",
-          description: "Design, develop, build, and test mechanical devices and systems",
-          skills: ["CAD/CAM", "Thermodynamics", "Manufacturing Processes", "Material Science"]
-        },
-        {
-          title: "Electrical Engineer",
-          description: "Design, develop, and maintain electrical systems and equipment",
-          skills: ["Circuit Design", "Power Systems", "Electronics", "Control Systems"]
-        },
-        {
-          title: "Data Scientist",
-          description: "Analyze and interpret complex data to help organizations make better decisions",
-          skills: ["Statistics", "Programming", "Machine Learning", "Data Visualization"]
-        }
-      ],
-      resources: {
-        books: [
+
+      courseStructure: {
+        duration: "4 years",
+        semesters: "8 semesters",
+        mainSubjects: [
+          "Engineering Mathematics",
+          "Physics",
+          "Chemistry",
+          "Programming",
+          "Basic Electronics",
+          "Engineering Drawing"
+        ],
+        specializations: [
           {
-            title: "Concepts of Physics by H.C. Verma",
-            author: "A comprehensive physics resource for 11th-12th and competitive exams"
+            name: "Computer Science",
+            subjects: ["Data Structures", "Algorithms", "Database Management", "Operating Systems"]
           },
           {
-            title: "Higher Engineering Mathematics by B.S. Grewal",
-            author: "Standard textbook for engineering mathematics"
+            name: "Mechanical",
+            subjects: ["Thermodynamics", "Machine Design", "Manufacturing Processes", "CAD/CAM"]
           },
           {
-            title: "Organic Chemistry by Morrison and Boyd",
-            author: "Detailed reference for organic chemistry concepts"
+            name: "Electrical",
+            subjects: ["Circuit Theory", "Power Systems", "Control Systems", "Microprocessors"]
           }
         ],
-        courses: [
-          {
-            title: "JEE Mathematics - Complete Course",
-            platform: "Unacademy, BYJU'S, Vedantu, and other platforms"
-          },
-          {
-            title: "Introduction to Computer Science and Programming",
-            platform: "edX, Coursera, and other MOOCs"
-          },
-          {
-            title: "Physics for Engineers and Scientists",
-            platform: "MIT OpenCourseWare and similar platforms"
-          }
-        ],
-        websites: [
-          {
-            name: "NPTEL (National Programme on Technology Enhanced Learning)",
-            description: "Free online courses by IITs and IISc in engineering and sciences"
-          },
-          {
-            name: "Khan Academy",
-            description: "Free educational resources for math, science, and computing"
-          },
-          {
-            name: "Engineering.com",
-            description: "News, articles, and resources for engineering students and professionals"
-          }
-        ]
+        practicals: {
+          labs: ["Physics Lab", "Chemistry Lab", "Programming Lab", "Workshop"],
+          projects: ["Mini Project (6th sem)", "Major Project (8th sem)"],
+          internships: "Mandatory internship in 3rd year summer"
+        }
       },
       relatedPaths: [
         {
@@ -596,7 +588,7 @@ function getPathData(pathId: string | undefined) {
           link: "/career-paths/diploma-engineering"
         }
       ]
-    },
+    }
     // Additional career paths would be defined here
   };
   
