@@ -1,16 +1,13 @@
-
 import { BookCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
-  return (
-    <footer className="border-t bg-muted/40">
+  return <footer className="border-t bg-muted/40">
       <div className="container py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <BookCheck className="h-6 w-6 text-brand-blue-500" />
-              <span className="font-bold text-xl text-brand-blue-500">CareerCompass</span>
+              <span className="font-bold text-xl text-brand-blue-500">AI Career Guidance</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Guiding you to the right career path, from 10th standard to your dream job.
@@ -50,8 +47,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} CareerCompass. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
