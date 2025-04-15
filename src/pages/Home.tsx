@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { BookOpen, Search, MessageSquare, GraduationCap, Trophy, BookCheck, Briefcase } from "lucide-react";
+import CareerFlowChart from "@/components/career-path/CareerFlowChart";
 
 const Home = () => {
   return (
@@ -152,6 +152,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <CareerFlowChart />
     </div>
   );
 };

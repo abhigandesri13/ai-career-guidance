@@ -21,14 +21,14 @@ const initialMessages: Message[] = [
   }
 ];
 
-// Sample FAQ data for quick questions
+// Updated sample questions for better clarity
 const sampleQuestions = [
-  "What are my options after 10th grade?",
-  "Which stream should I choose - Science, Commerce, or Arts?",
-  "What are the best career options in medical field?",
-  "How can I prepare for engineering entrance exams?",
+  "What are the best career options in Science stream after 10th?",
+  "Which entrance exams should I prepare for medical field?",
+  "What are the job opportunities in Commerce stream?",
+  "Tell me about government scholarships available after 10th",
   "What skills do I need for a career in IT?",
-  "What diploma courses are available after 10th?",
+  "Compare Science, Commerce, and Arts streams",
 ];
 
 const Chatbot = () => {
@@ -232,9 +232,24 @@ const Chatbot = () => {
   );
 };
 
-// Function to generate bot responses based on user input
+// Enhanced bot responses with more detailed information
 const getBotResponse = (input: string): string => {
   const normalizedInput = input.toLowerCase();
+  
+  // Science stream options
+  if (normalizedInput.includes("science stream") || normalizedInput.includes("science after 10th")) {
+    return "Career options in Science stream after 10th:\n\n1. PCM (Physics, Chemistry, Mathematics):\n   - Engineering (through JEE/State CETs)\n   - Architecture (through NATA)\n   - Pure Sciences\n   - Computer Science\n   Fee range: ₹8,000-30,000 per year (govt), ₹50,000-2,00,000 (private)\n\n2. PCB (Physics, Chemistry, Biology):\n   - Medical (MBBS through NEET)\n   - Dentistry (BDS)\n   - Pharmacy\n   - Veterinary Science\n   Fee range: ₹10,000-50,000 per year (govt), ₹2,00,000-15,00,000 (private)\n\n3. Key entrance exams:\n   - JEE Main & Advanced\n   - NEET-UG\n   - State CETs\n\nWould you like specific information about any of these paths?";
+  }
+
+  // Medical entrance exams
+  if (normalizedInput.includes("medical") && normalizedInput.includes("entrance")) {
+    return "Key entrance exams for medical field:\n\n1. NEET-UG (National Eligibility cum Entrance Test):\n   - Mandatory for MBBS/BDS\n   - Conducted once a year (May/June)\n   - Syllabus: 11th & 12th PCB\n   - Registration: ₹1,600 (Gen), ₹900 (Reserved)\n\n2. AIIMS & JIPMER:\n   - Now merged with NEET\n\n3. State Medical Entrance Tests:\n   - For state quota seats\n   - Based on NEET scores\n\n4. Key preparation tips:\n   - Start early (11th grade)\n   - Focus on NCERT books\n   - Regular mock tests\n   - Time management skills\n\nNeed specific guidance about any exam?";
+  }
+
+  // Commerce opportunities
+  if (normalizedInput.includes("commerce") && normalizedInput.includes("job")) {
+    return "Job opportunities after Commerce stream:\n\n1. Professional Courses:\n   - CA: 6-7 LPA starting\n   - CS: 5-6 LPA starting\n   - CMA: 4-5 LPA starting\n\n2. Banking Sector:\n   - Bank PO: 4-8 LPA\n   - Credit Analyst: 5-7 LPA\n\n3. Corporate Jobs:\n   - Financial Analyst: 6-12 LPA\n   - Investment Banking: 8-15 LPA\n   - Corporate Accounting: 5-8 LPA\n\n4. Entrepreneurship opportunities:\n   - Start-up ventures\n   - Family business\n\nSkills needed:\n- Financial analysis\n- Computer proficiency\n- Communication\n- Problem-solving\n\nWould you like to know more about any specific role?";
+  }
   
   // After 10th options
   if (normalizedInput.includes("after 10th") || normalizedInput.includes("options after 10th") || normalizedInput.includes("after 10")) {
