@@ -52,6 +52,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				brand: {
+					blue: {
+						50: '#eaf5ff',
+						100: '#d6ebff',
+						200: '#a6d6ff',
+						300: '#75bfff',
+						400: '#47a3ff', 
+						500: '#1a85ff', /* primary blue */
+						600: '#0066cc',
+						700: '#0052a3',
+						800: '#003d7a',
+						900: '#002952',
+					},
+					orange: {
+						50: '#fff7e6',
+						100: '#ffecc4',
+						200: '#ffd780',
+						300: '#ffbf3c',
+						400: '#ffa500', /* primary orange */
+						500: '#e67e00',
+						600: '#cc5500',
+						700: '#a34400',
+						800: '#7a3300',
+						900: '#522200',
+					},
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
