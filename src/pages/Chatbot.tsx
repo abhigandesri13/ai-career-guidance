@@ -21,14 +21,13 @@ const initialMessages: Message[] = [
   }
 ];
 
-// Updated sample questions for better clarity
 const sampleQuestions = [
-  "What are the best career options in Science stream after 10th?",
-  "Which entrance exams should I prepare for medical field?",
-  "What are the job opportunities in Commerce stream?",
-  "Tell me about government scholarships available after 10th",
-  "What skills do I need for a career in IT?",
-  "Compare Science, Commerce, and Arts streams",
+  "What are the different streams available after 10th?",
+  "Tell me about engineering career paths and entrance exams",
+  "What are the career options in medical field?",
+  "Explain commerce stream career opportunities and scope",
+  "What are the best courses in arts/humanities stream?",
+  "Tell me about vocational courses after 10th"
 ];
 
 const Chatbot = () => {
@@ -50,7 +49,6 @@ const Chatbot = () => {
     
     if (!inputValue.trim()) return;
     
-    // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       content: inputValue,
@@ -62,7 +60,6 @@ const Chatbot = () => {
     setInputValue("");
     setIsTyping(true);
     
-    // Simulate bot response with delay
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -232,76 +229,33 @@ const Chatbot = () => {
   );
 };
 
-// Enhanced bot responses with more detailed information
 const getBotResponse = (input: string): string => {
   const normalizedInput = input.toLowerCase();
   
-  // Science stream options
-  if (normalizedInput.includes("science stream") || normalizedInput.includes("science after 10th")) {
-    return "Career options in Science stream after 10th:\n\n1. PCM (Physics, Chemistry, Mathematics):\n   - Engineering (through JEE/State CETs)\n   - Architecture (through NATA)\n   - Pure Sciences\n   - Computer Science\n   Fee range: ₹8,000-30,000 per year (govt), ₹50,000-2,00,000 (private)\n\n2. PCB (Physics, Chemistry, Biology):\n   - Medical (MBBS through NEET)\n   - Dentistry (BDS)\n   - Pharmacy\n   - Veterinary Science\n   Fee range: ₹10,000-50,000 per year (govt), ₹2,00,000-15,00,000 (private)\n\n3. Key entrance exams:\n   - JEE Main & Advanced\n   - NEET-UG\n   - State CETs\n\nWould you like specific information about any of these paths?";
+  if (normalizedInput.includes("different streams") || normalizedInput.includes("streams available")) {
+    return "After 10th standard, you have four main streams:\n\n1. Science Stream:\n   • PCM (Physics, Chemistry, Math)\n   • PCB (Physics, Chemistry, Biology)\n   Key careers: Engineering, Medical, Research\n\n2. Commerce Stream:\n   • Subjects: Accounts, Business, Economics\n   Key careers: CA, Banking, Management\n\n3. Arts/Humanities:\n   • Subjects: History, Geography, Literature\n   Key careers: Law, Media, Teaching\n\n4. Vocational Education:\n   • Various skill-based courses\n   • ITI and Diploma programs\n\nWhich stream would you like to know more about?";
   }
 
-  // Medical entrance exams
-  if (normalizedInput.includes("medical") && normalizedInput.includes("entrance")) {
-    return "Key entrance exams for medical field:\n\n1. NEET-UG (National Eligibility cum Entrance Test):\n   - Mandatory for MBBS/BDS\n   - Conducted once a year (May/June)\n   - Syllabus: 11th & 12th PCB\n   - Registration: ₹1,600 (Gen), ₹900 (Reserved)\n\n2. AIIMS & JIPMER:\n   - Now merged with NEET\n\n3. State Medical Entrance Tests:\n   - For state quota seats\n   - Based on NEET scores\n\n4. Key preparation tips:\n   - Start early (11th grade)\n   - Focus on NCERT books\n   - Regular mock tests\n   - Time management skills\n\nNeed specific guidance about any exam?";
+  if (normalizedInput.includes("engineering")) {
+    return "Engineering career paths after 10th:\n\n1. Preparation Path:\n   • Take PCM in 11th-12th\n   • Prepare for JEE Main/Advanced\n   • State level entrance exams\n\n2. B.Tech/BE Branches:\n   • Computer Science: ₹4-40 LPA\n   • Mechanical: ₹3-30 LPA\n   • Electronics: ₹3.5-35 LPA\n   • Civil: ₹3-25 LPA\n\n3. Alternative Paths:\n   • Diploma after 10th (3 years)\n   • Direct admission through management quota\n\n4. Required Skills:\n   • Strong mathematics\n   • Problem-solving ability\n   • Technical aptitude\n\nWould you like specific information about any branch?";
   }
 
-  // Commerce opportunities
-  if (normalizedInput.includes("commerce") && normalizedInput.includes("job")) {
-    return "Job opportunities after Commerce stream:\n\n1. Professional Courses:\n   - CA: 6-7 LPA starting\n   - CS: 5-6 LPA starting\n   - CMA: 4-5 LPA starting\n\n2. Banking Sector:\n   - Bank PO: 4-8 LPA\n   - Credit Analyst: 5-7 LPA\n\n3. Corporate Jobs:\n   - Financial Analyst: 6-12 LPA\n   - Investment Banking: 8-15 LPA\n   - Corporate Accounting: 5-8 LPA\n\n4. Entrepreneurship opportunities:\n   - Start-up ventures\n   - Family business\n\nSkills needed:\n- Financial analysis\n- Computer proficiency\n- Communication\n- Problem-solving\n\nWould you like to know more about any specific role?";
-  }
-  
-  // After 10th options
-  if (normalizedInput.includes("after 10th") || normalizedInput.includes("options after 10th") || normalizedInput.includes("after 10")) {
-    return "After completing 10th grade, you have several options:\n\n1. Higher Secondary Education (11th & 12th):\n   - Science Stream (PCM/PCB)\n   - Commerce Stream\n   - Arts/Humanities Stream\n\n2. Diploma Courses:\n   - Polytechnic diploma in engineering (3 years)\n   - Other diploma programs in various fields\n\n3. ITI Courses:\n   - 1-2 year vocational training programs\n\n4. Vocational Courses:\n   - Certificate programs in various skills\n\nWould you like more specific information about any of these paths?";
-  }
-  
-  // Stream selection advice
-  if (normalizedInput.includes("which stream") || normalizedInput.includes("science or commerce") || normalizedInput.includes("commerce or arts") || normalizedInput.includes("choose stream")) {
-    return "Choosing between Science, Commerce, and Arts streams depends on your interests and career goals:\n\nScience: Ideal if you enjoy subjects like Physics, Chemistry, Biology, or Mathematics and are interested in careers in engineering, medicine, research, or technology.\n\nCommerce: Great if you have an interest in business, economics, accounting, or finance and want to pursue careers in management, banking, entrepreneurship, etc.\n\nArts/Humanities: Excellent if you enjoy subjects like history, languages, psychology, or sociology and are interested in careers in law, journalism, teaching, social work, etc.\n\nWould you like me to help you evaluate which stream might suit you best based on your interests?";
-  }
-  
-  // Medical career guidance
-  if (normalizedInput.includes("medical") || normalizedInput.includes("doctor") || normalizedInput.includes("mbbs") || normalizedInput.includes("healthcare")) {
-    return "Career options in the medical field after 10th include:\n\n1. After 10th: Choose Science stream with Biology (PCB) in 11th-12th\n\n2. After 12th: \n   - MBBS (through NEET exam)\n   - BDS (Dentistry)\n   - BAMS (Ayurveda)\n   - BHMS (Homeopathy)\n   - B.Pharm (Pharmacy)\n   - BSc Nursing\n   - Allied health sciences (Physiotherapy, Lab Technology, etc.)\n\n3. Skills needed: Strong aptitude in biology and chemistry, good memory, compassion, and the ability to handle pressure.\n\nWould you like more specific information about entrance exams, preparation, or any specific medical profession?";
-  }
-  
-  // Engineering career guidance
-  if (normalizedInput.includes("engineering") || normalizedInput.includes("engineer") || normalizedInput.includes("b.tech") || normalizedInput.includes("jee")) {
-    return "For pursuing engineering, your path would typically be:\n\n1. After 10th: Choose Science stream with Mathematics (PCM) in 11th-12th\n\n2. Preparation for entrance exams:\n   - JEE Main and Advanced for IITs/NITs\n   - State-level engineering entrance exams\n\n3. Engineering options after 12th:\n   - B.Tech/BE (4 years)\n   - Diploma in Engineering (3 years, also directly after 10th)\n\n4. Popular branches: Computer Science, Mechanical, Electrical, Civil, Electronics, etc.\n\n5. Key skills: Strong mathematical ability, analytical thinking, problem-solving, and creativity.\n\nWould you like specific information about entrance exam preparation or particular engineering branches?";
-  }
-  
-  // IT career guidance
-  if (normalizedInput.includes("it") || normalizedInput.includes("software") || normalizedInput.includes("coding") || normalizedInput.includes("programmer") || normalizedInput.includes("computer")) {
-    return "For a career in IT and software, the skills you would need include:\n\n1. Technical Skills:\n   - Programming languages (Python, Java, C++, JavaScript, etc.)\n   - Database management\n   - Web development\n   - Mobile app development\n   - Cloud computing\n   - Cybersecurity knowledge\n\n2. Soft Skills:\n   - Problem-solving abilities\n   - Logical thinking\n   - Continuous learning aptitude\n   - Teamwork and communication\n\n3. Education path options:\n   - Science (PCM) in 11th-12th → B.Tech in Computer Science\n   - Direct diploma in Computer Science after 10th\n   - BCA after 12th (any stream)\n\n4. Alternative learning paths include coding bootcamps and online certifications.\n\nWould you like to know more about specific IT career paths or educational options?";
-  }
-  
-  // Diploma courses
-  if (normalizedInput.includes("diploma") || normalizedInput.includes("polytechnic")) {
-    return "Diploma courses available after 10th include:\n\n1. Engineering Diplomas (3 years):\n   - Mechanical Engineering\n   - Civil Engineering\n   - Electrical Engineering\n   - Computer Science & Engineering\n   - Electronics & Communication\n\n2. Other Technical Diplomas:\n   - Pharmacy (D.Pharm)\n   - Hotel Management\n   - Fashion Design\n   - Interior Design\n   - Agriculture\n\n3. Advantages of diplomas:\n   - Shorter duration compared to degrees\n   - More practical/hands-on approach\n   - Direct entry to second year B.Tech after diploma\n   - Earlier entry into the job market\n\nWould you like more information about admission processes or any specific diploma program?";
-  }
-  
-  // Commerce or business related
-  if (normalizedInput.includes("commerce") || normalizedInput.includes("business") || normalizedInput.includes("ca") || normalizedInput.includes("accounting") || normalizedInput.includes("mba")) {
-    return "Following a commerce path after 10th:\n\n1. 11th-12th: Commerce stream with subjects like Accountancy, Business Studies, Economics, and Mathematics\n\n2. After 12th options:\n   - B.Com (Bachelor of Commerce)\n   - BBA (Bachelor of Business Administration)\n   - Chartered Accountancy (CA)\n   - Cost & Management Accountancy (CMA)\n   - Company Secretary (CS)\n   - Bachelor's in Economics or Statistics\n\n3. Higher studies: MBA, M.Com, specialized masters\n\n4. Career options: Accounting, finance, investment banking, marketing, entrepreneurship, consulting, etc.\n\nWould you like specific details about any of these courses or professions?";
-  }
-  
-  // Arts and humanities
-  if (normalizedInput.includes("arts") || normalizedInput.includes("humanities") || normalizedInput.includes("ba ") || normalizedInput.includes("literature") || normalizedInput.includes("history")) {
-    return "The Arts/Humanities path after 10th offers diverse opportunities:\n\n1. 11th-12th: Arts stream with subjects like History, Political Science, Geography, Psychology, Sociology, Languages, etc.\n\n2. After 12th options:\n   - BA in various subjects (English, History, Psychology, etc.)\n   - BFA (Fine Arts)\n   - BDesign (Design)\n   - BJournalism & Mass Communication\n   - Bachelor's in Hotel Management\n   - Law (integrated BA LLB)\n   - Bachelor's in Social Work\n\n3. Career paths: Teaching, journalism, content creation, law, civil services, psychology, design, social work, hospitality, and many more.\n\nWould you like me to elaborate on specific career opportunities in the arts field?";
-  }
-  
-  // Creative career paths
-  if (normalizedInput.includes("design") || normalizedInput.includes("animation") || normalizedInput.includes("multimedia")) {
-    return "Creative career paths after 10th include:\n\n1. Design Fields:\n   - Diploma in Graphic Design\n   - Animation & VFX courses\n   - Web Design courses\n   - Fashion Design\n   - Interior Design\n\n2. Multimedia:\n   - Digital Art\n   - Video Editing\n   - 3D Modeling\n\n3. Education Path:\n   - Diploma followed by degree\n   - Direct Bachelor's in Design after 12th\n\nWould you like specific information about any of these creative fields?";
+  if (normalizedInput.includes("medical")) {
+    return "Medical career paths after 10th:\n\n1. Main Path (MBBS):\n   • Take PCB in 11th-12th\n   • Clear NEET-UG entrance\n   • 5.5 years duration (including internship)\n   • Starting salary: ₹6-12 LPA\n\n2. Alternative Medical Courses:\n   • BDS (Dentistry): 5 years\n   • BAMS (Ayurveda): 5.5 years\n   • BHMS (Homeopathy): 5.5 years\n   • B.Pharm (Pharmacy): 4 years\n\n3. Paramedical Courses:\n   • Nursing (4 years)\n   • Lab Technology (3-4 years)\n   • Physiotherapy (4.5 years)\n\nWould you like details about any specific medical course?";
   }
 
-  // Hospitality and Tourism career paths
-  if (normalizedInput.includes("hospitality") || normalizedInput.includes("hotel") || normalizedInput.includes("tourism")) {
-    return "Hospitality and Tourism career paths after 10th:\n\n1. Diploma Programs:\n   - Hotel Management\n   - Travel & Tourism\n   - Culinary Arts\n   - Aviation Hospitality\n\n2. Certification Courses:\n   - Food & Beverage Service\n   - Front Office Operations\n   - Tour Guide Training\n\n3. Career Opportunities:\n   - Hotels and Resorts\n   - Airlines\n   - Travel Agencies\n   - Cruise Lines\n\nWould you like more details about any specific area?";
+  if (normalizedInput.includes("commerce")) {
+    return "Commerce career opportunities:\n\n1. Professional Courses:\n   • CA: 3 levels, 4-5 years\n   • CS: 3 levels, 3-4 years\n   • CMA: 3 levels, 3-4 years\n\n2. Degree Programs:\n   • B.Com: 3 years\n   • BBA: 3 years\n   • Economics: 3 years\n\n3. Career Paths & Salaries:\n   • Investment Banking: ₹10-25 LPA\n   • Chartered Accountant: ₹8-15 LPA\n   • Financial Analyst: ₹6-12 LPA\n   • Business Consultant: ₹7-15 LPA\n\n4. Skills Required:\n   • Analytical thinking\n   • Financial acumen\n   • Communication\n\nWould you like more details about any specific career?";
   }
 
-  // Default response
+  if (normalizedInput.includes("arts") || normalizedInput.includes("humanities")) {
+    return "Arts/Humanities courses and careers:\n\n1. Popular Courses:\n   • BA in Psychology\n   • BA in English\n   • BA in Economics\n   • Mass Communication\n   • Fashion Design\n   • Law (integrated programs)\n\n2. Career Opportunities:\n   • Content Writer: ₹3-12 LPA\n   • Teacher: ₹3-10 LPA\n   • Psychologist: ₹4-15 LPA\n   • Journalist: ₹3-15 LPA\n   • Lawyer: ₹5-30 LPA\n\n3. Required Skills:\n   • Communication\n   • Critical thinking\n   • Creativity\n   • Research ability\n\nWould you like specific information about any course?";
+  }
+
+  if (normalizedInput.includes("vocational")) {
+    return "Vocational courses after 10th:\n\n1. ITI Courses (1-2 years):\n   • Electrician\n   • Mechanic\n   • Plumber\n   • Welder\n   Starting salary: ₹1.8-3 LPA\n\n2. Diploma Programs (3 years):\n   • Mechanical Engineering\n   • Civil Engineering\n   • Electronics\n   Starting salary: ₹2.5-4 LPA\n\n3. Other Vocational Courses:\n   • Animation & VFX\n   • Hotel Management\n   • Fashion Design\n   • Beauty & Wellness\n\n4. Benefits:\n   • Practical skills\n   • Quick employment\n   • Industry connections\n\nNeed more details about any specific course?";
+  }
+
   return "I'm here to help guide you through various career paths after 10th grade. You can ask me about:\n\n- Different streams (Science, Commerce, Arts)\n- Diploma courses\n- Vocational training\n- Specific career fields\n- Entrance exams\n- Job opportunities\n\nFeel free to ask any specific questions!";
 };
 
