@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -239,7 +238,7 @@ const getBotResponse = (input: string): string => {
   
   // After 10th options
   if (normalizedInput.includes("after 10th") || normalizedInput.includes("options after 10th") || normalizedInput.includes("after 10")) {
-    return "After completing 10th grade, you have several options:\n\n1. Higher Secondary Education (11th & 12th):\n   - Science Stream (PCM/PCB)\n   - Commerce Stream\n   - Arts/Humanities Stream\n\n2. Diploma Courses:\n   - Polytechnic diploma in engineering (3 years)\n   - Other diploma programs in various fields\n\n3. ITI Courses:\n   - 1-2 year vocational training programs\n\n4. Vocational Courses:\n   - Certificate programs in various skills\n\nThe best choice depends on your interests, strengths, and long-term career goals. Would you like more specific information about any of these paths?";
+    return "After completing 10th grade, you have several options:\n\n1. Higher Secondary Education (11th & 12th):\n   - Science Stream (PCM/PCB)\n   - Commerce Stream\n   - Arts/Humanities Stream\n\n2. Diploma Courses:\n   - Polytechnic diploma in engineering (3 years)\n   - Other diploma programs in various fields\n\n3. ITI Courses:\n   - 1-2 year vocational training programs\n\n4. Vocational Courses:\n   - Certificate programs in various skills\n\nWould you like more specific information about any of these paths?";
   }
   
   // Stream selection advice
@@ -277,8 +276,18 @@ const getBotResponse = (input: string): string => {
     return "The Arts/Humanities path after 10th offers diverse opportunities:\n\n1. 11th-12th: Arts stream with subjects like History, Political Science, Geography, Psychology, Sociology, Languages, etc.\n\n2. After 12th options:\n   - BA in various subjects (English, History, Psychology, etc.)\n   - BFA (Fine Arts)\n   - BDesign (Design)\n   - BJournalism & Mass Communication\n   - Bachelor's in Hotel Management\n   - Law (integrated BA LLB)\n   - Bachelor's in Social Work\n\n3. Career paths: Teaching, journalism, content creation, law, civil services, psychology, design, social work, hospitality, and many more.\n\nWould you like me to elaborate on specific career opportunities in the arts field?";
   }
   
-  // Default response for other questions
-  return "Thank you for your question. I'm here to provide guidance on various career paths after 10th grade. For more specific information about educational options, entrance exams, or career opportunities, feel free to ask detailed questions.\n\nYou can also explore our career paths section on the website for comprehensive information about different fields, or take our career assessment to get personalized recommendations based on your interests and aptitude.";
+  // Creative career paths
+  if (normalizedInput.includes("design") || normalizedInput.includes("animation") || normalizedInput.includes("multimedia")) {
+    return "Creative career paths after 10th include:\n\n1. Design Fields:\n   - Diploma in Graphic Design\n   - Animation & VFX courses\n   - Web Design courses\n   - Fashion Design\n   - Interior Design\n\n2. Multimedia:\n   - Digital Art\n   - Video Editing\n   - 3D Modeling\n\n3. Education Path:\n   - Diploma followed by degree\n   - Direct Bachelor's in Design after 12th\n\nWould you like specific information about any of these creative fields?";
+  }
+
+  // Hospitality and Tourism career paths
+  if (normalizedInput.includes("hospitality") || normalizedInput.includes("hotel") || normalizedInput.includes("tourism")) {
+    return "Hospitality and Tourism career paths after 10th:\n\n1. Diploma Programs:\n   - Hotel Management\n   - Travel & Tourism\n   - Culinary Arts\n   - Aviation Hospitality\n\n2. Certification Courses:\n   - Food & Beverage Service\n   - Front Office Operations\n   - Tour Guide Training\n\n3. Career Opportunities:\n   - Hotels and Resorts\n   - Airlines\n   - Travel Agencies\n   - Cruise Lines\n\nWould you like more details about any specific area?";
+  }
+
+  // Default response
+  return "I'm here to help guide you through various career paths after 10th grade. You can ask me about:\n\n- Different streams (Science, Commerce, Arts)\n- Diploma courses\n- Vocational training\n- Specific career fields\n- Entrance exams\n- Job opportunities\n\nFeel free to ask any specific questions!";
 };
 
 export default Chatbot;

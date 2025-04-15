@@ -1,5 +1,7 @@
+
 import { BookCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   return <footer className="border-t bg-muted/40">
       <div className="container py-8 md:py-12">
@@ -42,11 +44,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
-        <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} CareerCompass. All rights reserved.</p>
-        </div>
       </div>
     </footer>;
 };
+
 export default Footer;
