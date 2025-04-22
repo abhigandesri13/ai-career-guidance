@@ -149,43 +149,43 @@ const CareerPathCard = ({ path }: { path: any }) => {
 const after10thPaths = [
   {
     title: "Science Stream (PCM)",
-    description: "Physics, Chemistry, and Mathematics - Gateway to engineering, technology, and research careers.",
+    description: "Physics, Chemistry, and Mathematics - Ideal for students interested in engineering, technology, research, and innovation. Opens doors to IITs, NITs, and prestigious engineering colleges.",
     icon: Calculator,
     link: "/career-paths/science-pcm"
   },
   {
     title: "Science Stream (PCB)",
-    description: "Physics, Chemistry, and Biology - Foundation for medical, healthcare, and life sciences careers.",
+    description: "Physics, Chemistry, and Biology - Perfect for aspiring doctors, healthcare professionals, and researchers in life sciences. Gateway to MBBS, BDS, pharmacy, and biotechnology.",
     icon: Heart,
     link: "/career-paths/science-pcb"
   },
   {
     title: "Commerce Stream",
-    description: "Study of business, economics, accounting, and finance for commercial career paths.",
+    description: "Study accounting, business, economics, and finance. Ideal for future entrepreneurs, accountants, financial analysts, and business leaders. Pathway to CA, CS, MBA, and banking careers.",
     icon: Briefcase,
     link: "/career-paths/commerce"
   },
   {
     title: "Arts/Humanities",
-    description: "Focus on languages, history, political science, psychology, and other social sciences.",
+    description: "Explore literature, history, psychology, sociology, and political science. Great for future lawyers, journalists, civil servants, educators, and social scientists.",
     icon: BookOpen,
     link: "/career-paths/arts"
   },
   {
     title: "Diploma in Engineering",
-    description: "3-year technical program in various engineering fields as an alternative to 11th and 12th.",
+    description: "3-year hands-on technical program offering practical skills in various engineering fields. Direct path to industry or lateral entry to B.Tech programs.",
     icon: Code,
     link: "/career-paths/diploma-engineering"
   },
   {
     title: "ITI Courses",
-    description: "Industrial Training Institute programs for skills in electrical, mechanical, and other trades.",
+    description: "Industrial Training Institute programs focusing on practical skills in electrical, mechanical, and other trades. Quick entry into skilled workforce with good employment prospects.",
     icon: Trophy,
     link: "/career-paths/iti"
   },
   {
     title: "Vocational Courses",
-    description: "Skill-based education in areas like hospitality, healthcare, beauty, and more.",
+    description: "Skill-based education in hospitality, healthcare, beauty, retail, and more. Perfect for quick career start with industry-relevant certifications.",
     icon: BookCheck,
     link: "/career-paths/vocational"
   },
@@ -194,43 +194,43 @@ const after10thPaths = [
 const after12thPaths = [
   {
     title: "Engineering",
-    description: "Undergraduate programs in various engineering disciplines like computer science, mechanical, etc.",
+    description: "4-year B.Tech/BE programs in computer science, mechanical, electrical, and more. High-demand career with excellent pay and global opportunities. Preparation for JEE and other entrance exams required.",
     icon: Code,
     link: "/career-paths/engineering"
   },
   {
     title: "Medical & Healthcare",
-    description: "Programs in medicine, dentistry, pharmacy, nursing, and allied health sciences.",
+    description: "MBBS, BDS, BAMS, nursing programs for healthcare careers. Long-term commitment with rewarding patient care opportunities. NEET qualification required for medical programs.",
     icon: Heart,
     link: "/career-paths/medical"
   },
   {
     title: "Business & Management",
-    description: "Degrees in business administration, commerce, accounting, economics, and management.",
+    description: "BBA, B.Com, BMS programs for business careers. Learn management, finance, marketing, and entrepreneurship. Gateway to MBA and professional certifications like CA/CS.",
     icon: Briefcase,
     link: "/career-paths/business"
   },
   {
     title: "Arts & Design",
-    description: "Creative programs in fine arts, design, animation, fashion, architecture, and more.",
+    description: "Creative programs in fine arts, graphic design, animation, fashion, and architecture. Blend creativity with technology for modern design careers. Portfolio development important.",
     icon: Palette,
     link: "/career-paths/arts-design"
   },
   {
     title: "Law",
-    description: "Legal education to pursue careers as a lawyer, legal consultant, or in judiciary.",
+    description: "5-year integrated or 3-year LLB programs. Career in corporate law, litigation, or judiciary. CLAT or other law entrance exams required. Strong analytical and communication skills needed.",
     icon: BookOpen,
     link: "/career-paths/law"
   },
   {
     title: "Hotel Management",
-    description: "Programs to pursue careers in hospitality, hotel operations, and tourism.",
+    description: "3-4 year programs in hospitality management. Career in hotels, restaurants, cruise ships, and tourism. Combines business skills with hospitality expertise. Good communication skills essential.",
     icon: Globe,
     link: "/career-paths/hotel-management"
   },
   {
     title: "Government Exams",
-    description: "Preparation for various government service exams and public sector opportunities.",
+    description: "Preparation for UPSC, SSC, Banking, and other public sector opportunities. Secure government jobs with good benefits and stability. Requires dedicated preparation and current affairs knowledge.",
     icon: BookCheck,
     link: "/career-paths/government-exams"
   },
@@ -239,31 +239,31 @@ const after12thPaths = [
 const higherEducationPaths = [
   {
     title: "Master's Degrees",
-    description: "Advanced specialization in various fields after completing undergraduate education.",
+    description: "2-3 year advanced programs like M.Tech, MSc, MA, MCom. Specialized knowledge and research opportunities. Better positions and higher pay scale. Entrance exams like GATE, NET required.",
     icon: GraduationCap,
     link: "/career-paths/masters"
   },
   {
     title: "Doctoral Programs",
-    description: "Research-focused PhD programs for advanced expertise and academic careers.",
+    description: "3-5 year PhD programs for research expertise. Career in academia, R&D, or specialized industry roles. Publication opportunities and research funding available. NET/JRF qualification beneficial.",
     icon: Lightbulb,
     link: "/career-paths/phd"
   },
   {
     title: "MBA & Business",
-    description: "Master of Business Administration and other advanced business qualifications.",
+    description: "2-year management programs post-graduation. Career growth in corporate leadership roles. CAT, XAT, or GMAT preparation required. Strong work experience valuable.",
     icon: Briefcase,
     link: "/career-paths/mba"
   },
   {
     title: "Professional Certifications",
-    description: "Industry-recognized qualifications to enhance skills and career prospects.",
+    description: "Short-term industry certifications in IT, finance, marketing. Quick skill upgrades for career advancement. Flexible learning options and industry recognition. Regular updates needed to stay current.",
     icon: BookCheck,
     link: "/career-paths/certifications"
   },
   {
     title: "Foreign Education",
-    description: "Opportunities to study abroad for undergraduate and postgraduate programs.",
+    description: "Study abroad for undergraduate or postgraduate programs. Global exposure and international career opportunities. GRE, GMAT, IELTS/TOEFL required. Significant financial planning needed.",
     icon: Globe,
     link: "/career-paths/study-abroad"
   },
