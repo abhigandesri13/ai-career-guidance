@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,7 +31,6 @@ const Assessment = () => {
   };
 
   const calculateResults = () => {
-    // Simple scoring mechanism to match answers to career categories
     const scores: Record<string, number> = {
       science: 0,
       engineering: 0,
@@ -44,7 +42,6 @@ const Assessment = () => {
       vocational: 0,
     };
 
-    // Map answers to categories and calculate scores
     Object.entries(answers).forEach(([questionIdx, answer]) => {
       const question = questions[parseInt(questionIdx)];
       const categories = question.categoryMapping[answer];
@@ -56,7 +53,6 @@ const Assessment = () => {
       }
     });
 
-    // Sort categories by score and get top matches
     const sortedResults = Object.entries(scores)
       .sort((a, b) => b[1] - a[1])
       .filter(([_, score]) => score > 0)
@@ -74,7 +70,6 @@ const Assessment = () => {
     setHasCompleted(false);
   };
 
-  // Render intro content
   if (currentStep === 0 && !answers[0]) {
     return (
       <div className="container max-w-4xl py-12">
@@ -137,7 +132,6 @@ const Assessment = () => {
     );
   }
 
-  // Render results
   if (hasCompleted) {
     return (
       <div className="container max-w-4xl py-12">
@@ -202,7 +196,6 @@ const Assessment = () => {
     );
   }
 
-  // Render questions
   const currentQuestion = questions[currentStep];
   const progress = ((currentStep) / (questions.length - 1)) * 100;
 
@@ -256,7 +249,6 @@ const Assessment = () => {
   );
 };
 
-// Assessment questions with category mapping for scoring
 const questions = [
   {
     question: "Introduction",
@@ -270,117 +262,48 @@ const questions = [
       "Biology and Chemistry",
       "Business Studies and Economics",
       "Languages and Literature",
-      "Art and Design",
-      "Computer Science and IT",
-      "Physical Education and Sports"
+      "Art and Design"
     ],
     categoryMapping: {
       "Mathematics and Physics": ["science", "engineering", "technical"],
       "Biology and Chemistry": ["science", "medical"],
       "Business Studies and Economics": ["commerce"],
       "Languages and Literature": ["arts"],
-      "Art and Design": ["arts", "design"],
-      "Computer Science and IT": ["engineering", "technical"],
-      "Physical Education and Sports": ["vocational"]
+      "Art and Design": ["arts", "design"]
     }
   },
   {
     question: "How do you prefer to learn new things?",
     options: [
-      "Through reading and research",
       "Through practical activities and hands-on experience",
+      "Through reading and research",
       "Through solving problems and puzzles",
-      "Through discussions and debates",
       "Through creative expression",
-      "Through analyzing data and statistics"
+      "Through discussions and group work"
     ],
     categoryMapping: {
-      "Through reading and research": ["arts", "medical", "science"],
       "Through practical activities and hands-on experience": ["vocational", "engineering", "medical"],
+      "Through reading and research": ["arts", "medical", "science"],
       "Through solving problems and puzzles": ["engineering", "technical", "science"],
-      "Through discussions and debates": ["arts", "commerce"],
       "Through creative expression": ["arts", "design"],
-      "Through analyzing data and statistics": ["commerce", "science", "technical"]
+      "Through discussions and group work": ["commerce", "arts"]
     }
   },
   {
-    question: "Which of these activities would you enjoy doing in your free time?",
+    question: "What kind of career impact interests you the most?",
     options: [
-      "Building or fixing things",
-      "Reading and writing",
-      "Drawing, painting, or other creative work",
-      "Playing sports or outdoor activities",
-      "Solving puzzles or playing strategy games",
-      "Helping or advising others",
-      "Working with computers or technology"
+      "Creating innovative solutions and technologies",
+      "Helping people with their health and wellbeing",
+      "Building successful businesses",
+      "Contributing to art and culture",
+      "Teaching and sharing knowledge"
     ],
     categoryMapping: {
-      "Building or fixing things": ["engineering", "vocational", "technical"],
-      "Reading and writing": ["arts"],
-      "Drawing, painting, or other creative work": ["arts", "design"],
-      "Playing sports or outdoor activities": ["vocational"],
-      "Solving puzzles or playing strategy games": ["engineering", "technical", "science"],
-      "Helping or advising others": ["medical", "commerce", "arts"],
-      "Working with computers or technology": ["engineering", "technical"]
-    }
-  },
-  {
-    question: "Which of these work environments appeals to you the most?",
-    options: [
-      "A laboratory or research facility",
-      "An office or business environment",
-      "A creative studio or workshop",
-      "A hospital or healthcare setting",
-      "Outdoors or in nature",
-      "A classroom or educational setting",
-      "Working with technology"
-    ],
-    categoryMapping: {
-      "A laboratory or research facility": ["science", "medical", "engineering"],
-      "An office or business environment": ["commerce"],
-      "A creative studio or workshop": ["arts", "design", "vocational"],
-      "A hospital or healthcare setting": ["medical"],
-      "Outdoors or in nature": ["vocational", "science"],
-      "A classroom or educational setting": ["arts"],
-      "Working with technology": ["engineering", "technical"]
-    }
-  },
-  {
-    question: "What kind of problems do you enjoy solving?",
-    options: [
-      "Mathematical or logical problems",
-      "People's physical health issues",
-      "Business or financial challenges",
-      "Creative or design challenges",
-      "Social or interpersonal problems",
-      "Technical or mechanical issues",
-      "Organizational or planning problems"
-    ],
-    categoryMapping: {
-      "Mathematical or logical problems": ["science", "engineering", "technical"],
-      "People's physical health issues": ["medical"],
-      "Business or financial challenges": ["commerce"],
-      "Creative or design challenges": ["arts", "design"],
-      "Social or interpersonal problems": ["arts"],
-      "Technical or mechanical issues": ["engineering", "vocational", "technical"],
-      "Organizational or planning problems": ["commerce"]
-    }
-  },
-  {
-    question: "How important is high earning potential in your career choice?",
-    options: [
-      "Extremely important - I want a high-paying career",
-      "Very important, but I also value other aspects",
-      "Somewhat important, but not my primary concern",
-      "Not very important - I prioritize passion over pay",
-      "Not important at all - I'm focused on fulfillment"
-    ],
-    categoryMapping: {
-      "Extremely important - I want a high-paying career": ["engineering", "medical", "commerce"],
-      "Very important, but I also value other aspects": ["engineering", "medical", "commerce", "technical"],
-      "Somewhat important, but not my primary concern": ["science", "arts", "vocational", "technical"],
-      "Not very important - I prioritize passion over pay": ["arts", "design", "vocational"],
-      "Not important at all - I'm focused on fulfillment": ["arts", "vocational"]
+      "Creating innovative solutions and technologies": ["engineering", "technical", "science"],
+      "Helping people with their health and wellbeing": ["medical", "science"],
+      "Building successful businesses": ["commerce"],
+      "Contributing to art and culture": ["arts", "design"],
+      "Teaching and sharing knowledge": ["arts", "science"]
     }
   },
   {
@@ -389,58 +312,17 @@ const questions = [
       "1-2 years (Vocational/Certificate courses)",
       "3-4 years (Bachelor's degree)",
       "5-6 years (Bachelor's + Master's)",
-      "7+ years (Medical/Doctoral studies)",
-      "I prefer on-the-job training over formal education"
+      "7+ years (Medical/Research)",
     ],
     categoryMapping: {
       "1-2 years (Vocational/Certificate courses)": ["vocational", "technical"],
-      "3-4 years (Bachelor's degree)": ["arts", "commerce", "engineering", "technical"],
-      "5-6 years (Bachelor's + Master's)": ["arts", "commerce", "engineering", "science"],
-      "7+ years (Medical/Doctoral studies)": ["medical", "science"],
-      "I prefer on-the-job training over formal education": ["vocational"]
-    }
-  },
-  {
-    question: "What kind of impact would you like to make through your career?",
-    options: [
-      "Technical innovations or scientific discoveries",
-      "Improving people's health and wellbeing",
-      "Contributing to business and economic growth",
-      "Creating art or cultural contributions",
-      "Teaching or sharing knowledge",
-      "Providing essential services or trades",
-      "Solving social or environmental problems"
-    ],
-    categoryMapping: {
-      "Technical innovations or scientific discoveries": ["engineering", "science", "technical"],
-      "Improving people's health and wellbeing": ["medical"],
-      "Contributing to business and economic growth": ["commerce"],
-      "Creating art or cultural contributions": ["arts", "design"],
-      "Teaching or sharing knowledge": ["arts", "science"],
-      "Providing essential services or trades": ["vocational"],
-      "Solving social or environmental problems": ["arts", "science"]
-    }
-  },
-  {
-    question: "How do you handle pressure and deadlines?",
-    options: [
-      "I thrive under pressure and tight deadlines",
-      "I can handle pressure well with proper planning",
-      "I manage okay but prefer a moderate pace",
-      "I prefer relaxed environments with flexible deadlines",
-      "I find pressure and strict deadlines very stressful"
-    ],
-    categoryMapping: {
-      "I thrive under pressure and tight deadlines": ["medical", "engineering", "commerce"],
-      "I can handle pressure well with proper planning": ["engineering", "commerce", "technical", "science"],
-      "I manage okay but prefer a moderate pace": ["arts", "science", "vocational"],
-      "I prefer relaxed environments with flexible deadlines": ["arts", "design", "vocational"],
-      "I find pressure and strict deadlines very stressful": ["arts", "vocational"]
+      "3-4 years (Bachelor's degree)": ["arts", "commerce", "engineering"],
+      "5-6 years (Bachelor's + Master's)": ["engineering", "science"],
+      "7+ years (Medical/Research)": ["medical", "science"]
     }
   }
 ];
 
-// Career categories with recommendations
 const careerRecommendations = {
   science: {
     title: "Science & Research",

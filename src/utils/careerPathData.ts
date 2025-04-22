@@ -1,10 +1,143 @@
+import { Calculator, Heart, Code, BookCheck, Briefcase, BookOpen, Palette, Trophy } from "lucide-react";
 
-import { Calculator, Heart, Code, BookCheck, Briefcase } from "lucide-react";
-
-// This will be our mock data function
 export function getPathData(pathId: string | undefined) {
-  // This would typically come from an API or a more comprehensive data source
   const paths: Record<string, any> = {
+    "commerce": {
+      title: "Commerce Stream",
+      description: "Explore the world of business, finance, and economics through commerce education",
+      icon: Briefcase,
+      timeline: "2 years (11th-12th) + 3-4 years higher education",
+      jobProspects: "Excellent opportunities in banking, finance, and corporate sectors",
+      entryRequirements: "Minimum 50% in 10th, basic mathematics aptitude",
+      educationPath: [
+        {
+          title: "Higher Secondary (11th & 12th)",
+          description: "Study core commerce subjects including Accountancy, Business Studies, Economics",
+          keyPoints: [
+            "Focus on understanding business fundamentals",
+            "Learn accounting principles and practices",
+            "Study micro and macroeconomics",
+            "Optional subjects like Mathematics, Statistics"
+          ]
+        },
+        {
+          title: "Undergraduate Options",
+          description: "Various specialized courses in commerce and business",
+          keyPoints: [
+            "B.Com (3 years) - Bachelor of Commerce",
+            "BBA (3 years) - Bachelor of Business Administration",
+            "CA Foundation - Start of Chartered Accountancy",
+            "CS Foundation - Company Secretary program"
+          ]
+        }
+      ],
+      skills: {
+        technical: [
+          {
+            name: "Accounting",
+            description: "Understanding of financial statements and accounting principles"
+          },
+          {
+            name: "Business Analytics",
+            description: "Ability to analyze business data and make informed decisions"
+          },
+          {
+            name: "Financial Planning",
+            description: "Skills in budgeting and financial management"
+          }
+        ],
+        soft: [
+          {
+            name: "Communication",
+            description: "Strong verbal and written business communication"
+          },
+          {
+            name: "Analytical Thinking",
+            description: "Problem-solving and strategic planning abilities"
+          }
+        ]
+      },
+      careerOptions: [
+        {
+          title: "Chartered Accountant",
+          description: "Professional accounting and auditing",
+          salary: "₹7-30 lakhs per annum",
+          growth: "High demand in all sectors"
+        },
+        {
+          title: "Investment Banker",
+          description: "Financial analysis and investment management",
+          salary: "₹10-40 lakhs per annum",
+          growth: "Growing with market expansion"
+        }
+      ]
+    },
+    "arts": {
+      title: "Arts/Humanities Stream",
+      description: "Explore language, literature, history, and social sciences",
+      icon: BookOpen,
+      timeline: "2 years (11th-12th) + 3-4 years higher education",
+      jobProspects: "Diverse opportunities in education, media, civil services",
+      entryRequirements: "No specific percentage requirement, strong interest in humanities",
+      educationPath: [
+        {
+          title: "Higher Secondary (11th & 12th)",
+          description: "Study various humanities subjects",
+          keyPoints: [
+            "Languages (English and regional)",
+            "History and Political Science",
+            "Geography and Economics",
+            "Psychology or Sociology"
+          ]
+        },
+        {
+          title: "Undergraduate Options",
+          description: "Various specialized courses in humanities",
+          keyPoints: [
+            "BA in various subjects",
+            "Mass Communication",
+            "Bachelor in Foreign Languages",
+            "Bachelor in Social Work"
+          ]
+        }
+      ],
+      skills: {
+        technical: [
+          {
+            name: "Research",
+            description: "Advanced research and analysis skills"
+          },
+          {
+            name: "Content Creation",
+            description: "Writing and content development abilities"
+          }
+        ],
+        soft: [
+          {
+            name: "Critical Thinking",
+            description: "Analysis and interpretation of information"
+          },
+          {
+            name: "Cultural Awareness",
+            description: "Understanding of diverse perspectives"
+          }
+        ]
+      },
+      careerOptions: [
+        {
+          title: "Content Writer",
+          description: "Creating content for various media",
+          salary: "₹3-15 lakhs per annum",
+          growth: "High demand in digital age"
+        },
+        {
+          title: "Civil Services",
+          description: "Government administrative services",
+          salary: "₹6-15 lakhs per annum",
+          growth: "Stable government positions"
+        }
+      ]
+    },
     "science-pcm": {
       title: "Science Stream (PCM)",
       description: "Physics, Chemistry, and Mathematics - Gateway to engineering, technology, and research careers",
@@ -154,7 +287,6 @@ export function getPathData(pathId: string | undefined) {
         }
       },
       
-      // Add the missing skills object that was causing the error
       skills: {
         technical: [
           {
@@ -194,7 +326,6 @@ export function getPathData(pathId: string | undefined) {
         ]
       },
       
-      // Add missing skillResources
       skillResources: [
         {
           title: "Khan Academy",
@@ -213,7 +344,6 @@ export function getPathData(pathId: string | undefined) {
         }
       ],
       
-      // Add missing careerOptions
       careerOptions: [
         {
           title: "Software Engineer",
@@ -238,7 +368,6 @@ export function getPathData(pathId: string | undefined) {
         }
       ],
       
-      // Add missing jobProfiles
       jobProfiles: [
         {
           title: "Software Developer",
@@ -257,7 +386,6 @@ export function getPathData(pathId: string | undefined) {
         }
       ],
       
-      // Add missing resources
       resources: {
         books: [
           {
@@ -323,7 +451,6 @@ export function getPathData(pathId: string | undefined) {
         }
       ]
     },
-    // Additional career paths would be defined here
     "science-pcb": {
       title: "Science Stream (PCB)",
       description: "Physics, Chemistry, and Biology - Gateway to medical, healthcare, and life sciences careers",
