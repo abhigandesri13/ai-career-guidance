@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getPathData } from "@/utils/careerPathData";
+import { toast } from "@/components/ui/sonner";
+import { useEffect } from "react";
 
 // Import all components
 import PathHeader from "@/components/career-path/PathHeader";
@@ -18,6 +20,14 @@ const CareerPathDetail = () => {
   const { pathId } = useParams();
   const pathData = getPathData(pathId);
   
+  useEffect(() => {
+    if (!pathData) {
+      toast.error("Career path not found", {
+        description: "The requested career path information could not be found"
+      });
+    }
+  }, [pathData]);
+
   if (!pathData) {
     return (
       <div className="container py-12 text-center">
@@ -66,25 +76,25 @@ const CareerPathDetail = () => {
         
         <TabsContent value="skills">
           <SkillsTab 
-            skills={pathData.skills}
-            skillResources={pathData.skillResources}
+            skills={pathData.skills || {}}
+            skillResources={pathData.skillResources || []}
           />
         </TabsContent>
         
         <TabsContent value="careers">
           <CareersTab 
-            careerOptions={pathData.careerOptions}
-            jobProfiles={pathData.jobProfiles}
+            careerOptions={pathData.careerOptions || []}
+            jobProfiles={pathData.jobProfiles || []}
           />
         </TabsContent>
         
         <TabsContent value="resources">
-          <ResourcesTab resources={pathData.resources} />
+          <ResourcesTab resources={pathData.resources || {}} />
         </TabsContent>
       </Tabs>
       
       {/* Related Paths */}
-      <RelatedPaths relatedPaths={pathData.relatedPaths} />
+      <RelatedPaths relatedPaths={pathData.relatedPaths || []} />
       
       {/* Assessment CTA */}
       <AssessmentCTA />

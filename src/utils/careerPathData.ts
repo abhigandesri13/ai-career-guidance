@@ -9,6 +9,72 @@ export function getPathData(pathId: string | undefined) {
       timeline: "2 years (11th-12th) + 3-4 years higher education",
       jobProspects: "Excellent opportunities in banking, finance, and corporate sectors",
       entryRequirements: "Minimum 50% in 10th, basic mathematics aptitude",
+      courseStructure: {
+        duration: "3-4 years (Bachelor's)",
+        semesters: "6-8 semesters",
+        mainSubjects: [
+          "Accountancy",
+          "Business Studies",
+          "Economics",
+          "Commercial Mathematics",
+          "Banking",
+          "Marketing"
+        ],
+        specializations: [
+          {
+            name: "Accounting & Finance",
+            subjects: ["Financial Accounting", "Cost Accounting", "Corporate Accounting", "Taxation"]
+          },
+          {
+            name: "Banking & Insurance",
+            subjects: ["Banking Operations", "Insurance Management", "Financial Markets", "Risk Management"]
+          }
+        ]
+      },
+      feeStructure: {
+        undergraduate: {
+          government: {
+            range: "₹10,000 - ₹50,000 per year",
+            notes: "Government colleges offer affordable commerce education"
+          },
+          private: {
+            range: "₹50,000 - ₹2,00,000 per year",
+            notes: "Private institutions charge based on reputation and facilities"
+          }
+        }
+      },
+      entranceExams: [
+        {
+          name: "Common Entrance Test for Commerce",
+          description: "State-level exam for admission to top commerce colleges",
+          level: "State",
+          timing: "After 12th board exams",
+          eligibility: "12th with Commerce or Mathematics",
+          freeShips: "Merit-based scholarships available for top ranks"
+        },
+        {
+          name: "Chartered Accountancy Foundation",
+          description: "Entry level exam for CA program",
+          level: "National",
+          timing: "Twice a year (May and November)",
+          eligibility: "12th pass with minimum 50%",
+          freeShips: "Fee reduction for economically weaker sections"
+        }
+      ],
+      scholarships: [
+        {
+          name: "Merit-cum-Means Scholarship",
+          amount: "₹10,000 per annum",
+          eligibility: "Based on 12th marks and family income",
+          link: "#"
+        },
+        {
+          name: "National Scholarship Portal",
+          amount: "₹5,000 - ₹20,000 per annum",
+          eligibility: "For SC/ST/OBC and economically weaker sections",
+          link: "#"
+        }
+      ],
       educationPath: [
         {
           title: "Higher Secondary (11th & 12th)",
@@ -79,6 +145,48 @@ export function getPathData(pathId: string | undefined) {
       timeline: "2 years (11th-12th) + 3-4 years higher education",
       jobProspects: "Diverse opportunities in education, media, civil services",
       entryRequirements: "No specific percentage requirement, strong interest in humanities",
+      courseStructure: {
+        duration: "3 years (Bachelor's)",
+        semesters: "6 semesters",
+        mainSubjects: [
+          "History",
+          "Political Science",
+          "Sociology",
+          "Psychology",
+          "Economics",
+          "Languages"
+        ]
+      },
+      feeStructure: {
+        undergraduate: {
+          government: {
+            range: "₹5,000 - ₹30,000 per year",
+            notes: "Most affordable stream in government colleges"
+          },
+          private: {
+            range: "₹30,000 - ₹1,50,000 per year",
+            notes: "Private institutions charge based on courses offered"
+          }
+        }
+      },
+      entranceExams: [
+        {
+          name: "Liberal Arts Entrance Test",
+          description: "For premium liberal arts universities",
+          level: "National",
+          timing: "After 12th exams",
+          eligibility: "12th in any stream",
+          freeShips: "Scholarships based on test performance"
+        }
+      ],
+      scholarships: [
+        {
+          name: "Arts Excellence Scholarship",
+          amount: "₹8,000 per annum",
+          eligibility: "Based on academic performance in humanities",
+          link: "#"
+        }
+      ],
       educationPath: [
         {
           title: "Higher Secondary (11th & 12th)",
@@ -664,12 +772,6 @@ export function getPathData(pathId: string | undefined) {
           description: "For those interested in engineering through academic route",
           icon: Calculator,
           link: "/career-paths/science-pcm"
-        },
-        {
-          title: "ITI Courses",
-          description: "Shorter duration technical training programs",
-          icon: Trophy,
-          link: "/career-paths/iti"
         }
       ]
     },
