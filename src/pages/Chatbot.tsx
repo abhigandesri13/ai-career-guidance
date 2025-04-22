@@ -80,18 +80,18 @@ const Chatbot = () => {
 
   return (
     <div className="container max-w-4xl py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl text-brand-blue-700">
+      <div className="text-center mb-8 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
           Ask CareerBot
         </h1>
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-white/90">
           Get answers to your questions about career paths, courses, exams, and more
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
-          <Card className="h-[600px] flex flex-col">
+          <Card className="h-[600px] flex flex-col bg-gradient-to-b from-purple-50 to-white">
             <CardContent className="flex-1 p-4 overflow-hidden flex flex-col">
               <div className="flex-1 overflow-y-auto pr-2 space-y-4 py-4">
                 {messages.map((message) => (
@@ -174,18 +174,23 @@ const Chatbot = () => {
         </div>
 
         <div>
-          <Card>
+          <Card className="bg-gradient-to-br from-purple-50 to-pink-50">
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="h-5 w-5 text-brand-orange-400" />
-                <h3 className="font-medium">Quick Questions</h3>
+                <Sparkles className="h-5 w-5 text-purple-500" />
+                <h3 className="font-medium text-purple-700">Quick Questions</h3>
               </div>
               <div className="space-y-2">
-                {sampleQuestions.map((question, index) => (
+                {[
+                  "What are my career options after 10th?",
+                  "Tell me about engineering pathways",
+                  "What are medical field opportunities?",
+                  "Explain different diploma courses",
+                ].map((question, index) => (
                   <Button 
                     key={index}
                     variant="outline" 
-                    className="w-full justify-start text-left h-auto py-2 font-normal text-muted-foreground hover:text-foreground"
+                    className="w-full justify-start text-left h-auto py-2 font-normal text-purple-600 hover:text-purple-800 hover:bg-purple-50 border-purple-100"
                     onClick={() => handleQuickQuestion(question)}
                   >
                     {question}

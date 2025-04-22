@@ -10,97 +10,105 @@ const CareerFlowChart = () => {
         <Button
           variant="outline"
           size="icon"
-          className="fixed bottom-6 right-6 h-12 w-12 rounded-full shadow-lg bg-white hover:bg-gray-50 border-2 border-brand-blue-200"
+          className="fixed bottom-6 right-6 h-12 w-12 rounded-full shadow-lg bg-white hover:bg-gray-50 border-2 border-purple-200"
         >
-          <RouteIcon className="h-6 w-6 text-brand-blue-500" />
+          <RouteIcon className="h-6 w-6 text-purple-500" />
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[90%] sm:w-[600px]">
         <div className="space-y-6 pt-6">
-          <SheetTitle className="text-2xl font-bold tracking-tight text-brand-blue-700">Career Path Flow Chart</SheetTitle>
-          <p className="text-muted-foreground">Comprehensive guide to educational and career paths after 10th standard</p>
+          <SheetTitle className="text-2xl font-bold tracking-tight text-purple-700">Career Path Flow Chart</SheetTitle>
+          <p className="text-muted-foreground">Educational paths and opportunities after 10th standard</p>
           
           <div className="bg-white p-4 rounded-lg border shadow-sm overflow-x-auto">
             <div className="min-w-[500px] space-y-6">
               {/* Level 1: 10th Standard */}
               <div className="flex flex-col items-center">
-                <div className="bg-brand-blue-500 text-white px-4 py-2 rounded-lg font-medium">
+                <div className="bg-purple-500 text-white px-4 py-2 rounded-lg font-medium">
                   10th Standard
                 </div>
               </div>
 
               {/* Arrows */}
-              <div className="flex justify-center">
-                <div className="h-8 w-0.5 bg-gray-300"></div>
+              <div className="flex justify-center gap-32">
+                <div className="h-8 w-0.5 bg-gray-300 transform -rotate-45"></div>
+                <div className="h-8 w-0.5 bg-gray-300 transform rotate-45"></div>
               </div>
 
-              {/* Level 2: Main Streams */}
-              <div className="grid grid-cols-4 gap-6">
-                {["Science", "Commerce", "Arts/Humanities", "Vocational"].map((stream) => (
-                  <div key={stream} className="flex flex-col items-center">
-                    <div className="bg-brand-orange-100 text-brand-orange-700 px-4 py-2 rounded-lg font-medium text-sm">
-                      {stream}
-                    </div>
+              {/* Level 2: Main Paths */}
+              <div className="grid grid-cols-2 gap-32">
+                <div className="flex flex-col items-center">
+                  <div className="bg-pink-100 text-pink-700 px-4 py-2 rounded-lg font-medium text-sm">
+                    Intermediate (2 years)
                   </div>
-                ))}
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="bg-purple-100 text-purple-700 px-4 py-2 rounded-lg font-medium text-sm">
+                    Polytechnic (3 years)
+                  </div>
+                </div>
               </div>
 
               {/* Arrows */}
-              <div className="grid grid-cols-4 gap-6">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="flex justify-center">
-                    <div className="h-8 w-0.5 bg-gray-300"></div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 gap-32">
+                <div className="flex justify-center">
+                  <div className="h-8 w-0.5 bg-gray-300"></div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="h-8 w-0.5 bg-gray-300"></div>
+                </div>
               </div>
 
-              {/* Level 3: Detailed Career Options */}
-              <div className="grid grid-cols-4 gap-4">
-                {/* Science Paths */}
+              {/* Level 3: Intermediate Groups */}
+              <div className="grid grid-cols-2 gap-32">
                 <div className="space-y-2">
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Engineering (B.Tech/BE)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Medical (MBBS/BDS)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Pharmacy (B.Pharm)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Pure Sciences (BSc)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Architecture (B.Arch)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Agriculture (B.Sc Ag)</div>
+                  <div className="bg-pink-50 text-pink-700 px-3 py-2 rounded-lg text-xs">MPC (Mathematics, Physics, Chemistry)</div>
+                  <div className="bg-pink-50 text-pink-700 px-3 py-2 rounded-lg text-xs">BiPC (Biology, Physics, Chemistry)</div>
+                  <div className="bg-pink-50 text-pink-700 px-3 py-2 rounded-lg text-xs">CEC (Commerce, Economics, Civics)</div>
+                  <div className="bg-pink-50 text-pink-700 px-3 py-2 rounded-lg text-xs">HEC (History, Economics, Civics)</div>
                 </div>
-
-                {/* Commerce Paths */}
                 <div className="space-y-2">
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">B.Com</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">BBA</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">CA/CS/CMA</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Economics (BA/BSc)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Banking/Finance</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Business Analytics</div>
+                  <div className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-xs">Civil Engineering</div>
+                  <div className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-xs">Mechanical Engineering</div>
+                  <div className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-xs">ECE (Electronics & Communication)</div>
+                  <div className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-xs">Computer Science Engineering</div>
                 </div>
+              </div>
 
-                {/* Arts/Humanities Paths */}
-                <div className="space-y-2">
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">BA (Liberal Arts)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Law (LLB)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Mass Comm. (BMM)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Psychology</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Design (B.Des)</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Hotel Management</div>
+              {/* Arrows */}
+              <div className="grid grid-cols-2 gap-32">
+                <div className="flex justify-center">
+                  <div className="h-8 w-0.5 bg-gray-300"></div>
                 </div>
+                <div className="flex justify-center">
+                  <div className="h-8 w-0.5 bg-gray-300"></div>
+                </div>
+              </div>
 
-                {/* Vocational Paths */}
+              {/* Level 4: Degree Options */}
+              <div className="grid grid-cols-2 gap-32">
                 <div className="space-y-2">
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Polytechnic Diploma</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">ITI Courses</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Paramedical</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Animation/VFX</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Beauty & Wellness</div>
-                  <div className="bg-brand-blue-50 text-brand-blue-700 px-3 py-2 rounded-lg text-xs">Digital Marketing</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs font-medium">Bachelor's Degrees (4 years)</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">B.Tech/BE - Engineering</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">MBBS - Medical</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">B.Com - Commerce</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">BA - Arts</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">BSc - Science</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">BBA - Business</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs font-medium">Career Options</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">Direct B.Tech Admission</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">Industry Jobs</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">Government Jobs</div>
+                  <div className="bg-indigo-50 text-indigo-700 px-3 py-2 rounded-lg text-xs">Entrepreneurship</div>
                 </div>
               </div>
 
               {/* Higher Education Note */}
-              <div className="mt-6 p-3 bg-brand-blue-50 rounded-lg">
-                <p className="text-xs text-brand-blue-700">
-                  After completing these courses, students can pursue higher education through:
+              <div className="mt-6 p-3 bg-purple-50 rounded-lg">
+                <p className="text-xs text-purple-700">
+                  After Bachelor's degree, students can pursue:
                   <br />• Master's Degrees (M.Tech, MBA, MA, MSc, etc.)
                   <br />• Professional Certifications
                   <br />• Research Programs (Ph.D)
