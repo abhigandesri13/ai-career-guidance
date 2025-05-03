@@ -28,10 +28,10 @@ interface EducationTabProps {
     level: string;
     timing: string;
     eligibility: string;
-    feeShips: string;
+    feeShips?: string;
     syllabus?: string[];
     pattern?: string;
-    preparationTips?: string[];
+    preparationTips?: string[] | string;
     importantDates?: string;
     applicationFee?: string;
   }>;
@@ -63,6 +63,31 @@ const EducationTab = ({
   const { duration = 'Not specified', semesters = 'Not specified', mainSubjects = [] } = courseStructure || {};
   const government = feeStructure?.undergraduate?.government || { range: 'Not specified', notes: 'Information not available' };
   const private_fees = feeStructure?.undergraduate?.private || { range: 'Not specified', notes: 'Information not available' };
+
+  // Helper function to safely handle array or string preparationTips
+  const renderPreparationTips = (tips?: string[] | string) => {
+    if (!tips) return null;
+    
+    if (typeof tips === 'string') {
+      return (
+        <ul className="list-disc pl-5 text-sm text-muted-foreground">
+          <li>{tips}</li>
+        </ul>
+      );
+    }
+    
+    if (Array.isArray(tips) && tips.length > 0) {
+      return (
+        <ul className="list-disc pl-5 text-sm text-muted-foreground">
+          {tips.map((tip, i) => (
+            <li key={i}>{tip}</li>
+          ))}
+        </ul>
+      );
+    }
+    
+    return null;
+  };
 
   return (
     <div className="space-y-8">
@@ -225,7 +250,7 @@ const EducationTab = ({
                     <div>
                       <h4 className="text-sm font-medium mb-2">Eligibility & Benefits</h4>
                       <p className="text-sm mb-2"><span className="font-medium">Eligibility:</span> {exam.eligibility}</p>
-                      <p className="text-sm"><span className="font-medium">Fee Waivers:</span> {exam.feeShips}</p>
+                      <p className="text-sm"><span className="font-medium">Fee Waivers:</span> {exam.feeShips || "Information not available"}</p>
                     </div>
                   </div>
                   
@@ -242,14 +267,10 @@ const EducationTab = ({
                     </div>
                   )}
                   
-                  {exam.preparationTips && exam.preparationTips.length > 0 && (
+                  {exam.preparationTips && (
                     <div className="mt-4">
                       <h4 className="text-sm font-medium mb-2">Preparation Tips</h4>
-                      <ul className="list-disc pl-5 text-sm text-muted-foreground">
-                        {exam.preparationTips.map((tip, i) => (
-                          <li key={i}>{tip}</li>
-                        ))}
-                      </ul>
+                      {renderPreparationTips(exam.preparationTips)}
                     </div>
                   )}
                 </div>
@@ -311,3 +332,4 @@ const EducationTab = ({
 };
 
 export default EducationTab;
+

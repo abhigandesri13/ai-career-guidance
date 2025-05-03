@@ -78,6 +78,7 @@ const CareerPathDetail = () => {
             feeStructure={pathData.feeStructure}
             entranceExams={pathData.entranceExams}
             scholarships={pathData.scholarships}
+            topColleges={pathData.topColleges}
           />
         </TabsContent>
         
