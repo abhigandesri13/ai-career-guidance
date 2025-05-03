@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,7 @@ import CareerPaths from "./pages/CareerPaths";
 import CareerPathDetail from "./pages/CareerPathDetail";
 import Assessment from "./pages/Assessment";
 import Chatbot from "./pages/Chatbot";
+import DetailedCareerFlowChart from "./components/career-path/DetailedCareerFlowChart";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,7 @@ const App = () => (
             <Route path="/career-paths/:pathId" element={<CareerPathDetail />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/chatbot" element={<Chatbot />} />
+            <Route path="/detailed-flowchart" element={<DetailedCareerFlowChart />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

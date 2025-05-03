@@ -32,6 +32,14 @@ const Home = () => {
                   </Link>
                 </Button>
               </div>
+              <div className="pt-2">
+                <Button asChild size="lg" className="bg-brand-orange-400 hover:bg-brand-orange-500 w-full sm:w-auto">
+                  <Link to="/detailed-flowchart">
+                    <GraduationCap className="mr-2 h-4 w-4" />
+                    View Detailed Career Flow Chart
+                  </Link>
+                </Button>
+              </div>
             </div>
             <div className="flex items-center justify-center">
               <div className="w-full h-full max-w-md rounded-2xl overflow-hidden bg-white shadow-xl">
@@ -152,6 +160,25 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+      {/* Career Flow Chart Section */}
+      <section className="py-12 bg-white border-t">
+        <div className="container px-4 md:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold tracking-tighter text-brand-blue-600">Career Progression Paths</h2>
+            <p className="mt-2 text-muted-foreground">Explore educational and career options after different academic stages</p>
+            <div className="mt-4">
+              <Button asChild variant="outline" size="lg" className="bg-brand-blue-50 border-brand-blue-200 text-brand-blue-700 hover:bg-brand-blue-100">
+                <Link to="/detailed-flowchart">
+                  <GraduationCap className="mr-2 h-4 w-4" />
+                  View Detailed Career Flow Chart
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <CareerFlowChart />
     </div>
   );
