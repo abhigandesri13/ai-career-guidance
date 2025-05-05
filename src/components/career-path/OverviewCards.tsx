@@ -11,35 +11,35 @@ interface OverviewCardsProps {
 const OverviewCards = ({ timeline, jobProspects, entryRequirements }: OverviewCardsProps) => {
   return (
     <div className="grid md:grid-cols-3 gap-4 mb-8">
-      <Card>
+      <Card className="shadow-sm border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow transition-all duration-300">
         <CardContent className="p-4 flex items-start gap-4">
-          <div className="rounded-full bg-brand-blue-100 p-3 flex-shrink-0">
-            <Clock className="h-5 w-5 text-brand-blue-500" />
+          <div className="rounded-full bg-gradient-to-br from-primary/20 to-primary/5 p-3 flex-shrink-0 border border-border/30">
+            <Clock className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-medium">Timeline</h3>
+            <h3 className="font-medium text-foreground/90">Timeline</h3>
             <p className="text-sm text-muted-foreground">{timeline}</p>
           </div>
         </CardContent>
       </Card>
-      <Card>
+      <Card className="shadow-sm border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow transition-all duration-300">
         <CardContent className="p-4 flex items-start gap-4">
-          <div className="rounded-full bg-brand-blue-100 p-3 flex-shrink-0">
-            <CircleDollarSign className="h-5 w-5 text-brand-blue-500" />
+          <div className="rounded-full bg-gradient-to-br from-primary/20 to-primary/5 p-3 flex-shrink-0 border border-border/30">
+            <CircleDollarSign className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-medium">Job Prospects</h3>
+            <h3 className="font-medium text-foreground/90">Job Prospects</h3>
             <p className="text-sm text-muted-foreground">{jobProspects}</p>
           </div>
         </CardContent>
       </Card>
-      <Card>
+      <Card className="shadow-sm border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow transition-all duration-300">
         <CardContent className="p-4 flex items-start gap-4">
-          <div className="rounded-full bg-brand-blue-100 p-3 flex-shrink-0">
-            <BookCheck className="h-5 w-5 text-brand-blue-500" />
+          <div className="rounded-full bg-gradient-to-br from-primary/20 to-primary/5 p-3 flex-shrink-0 border border-border/30">
+            <BookCheck className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-medium">Entry Requirements</h3>
+            <h3 className="font-medium text-foreground/90">Entry Requirements</h3>
             <p className="text-sm text-muted-foreground">{entryRequirements}</p>
           </div>
         </CardContent>

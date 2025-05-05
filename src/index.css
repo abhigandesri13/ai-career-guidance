@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 211 100% 55%; /* brand blue-500 */
+    --primary: 211 100% 50%; /* adjusted blue for professional look */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 35 100% 50%; /* brand orange-400 */
+    --secondary: 217 91% 60%; /* complementary blue shade */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 211 100% 95%; /* light blue */
+    --accent: 211 100% 96%; /* light blue accent */
     --accent-foreground: 211 100% 40%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 211 100% 55%;
+    --ring: 211 100% 50%;
 
     --radius: 0.5rem;
 
@@ -97,5 +98,37 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 }
+
+@layer components {
+  .card-gradient {
+    @apply bg-gradient-to-br from-accent to-background backdrop-blur-sm border border-border/50;
+  }
+  
+  .career-path-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:translate-y-[-3px];
+  }
+  
+  .career-path-icon {
+    @apply bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center;
+  }
+  
+  .section-heading {
+    @apply text-2xl md:text-3xl font-bold mb-6 text-foreground/90 tracking-tight;
+  }
+  
+  .subsection-heading {
+    @apply text-xl font-semibold mb-3 text-foreground/90;
+  }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ... keep existing code (logo styles, animations, and other base styles) */

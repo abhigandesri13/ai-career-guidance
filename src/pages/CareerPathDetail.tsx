@@ -57,12 +57,12 @@ const CareerPathDetail = () => {
       />
       
       {/* Detailed Content */}
-      <Tabs defaultValue="education">
-        <TabsList className="w-full max-w-md mx-auto grid grid-cols-4 mb-8">
-          <TabsTrigger value="education">Education</TabsTrigger>
-          <TabsTrigger value="skills">Skills</TabsTrigger>
-          <TabsTrigger value="careers">Careers</TabsTrigger>
-          <TabsTrigger value="resources">Resources</TabsTrigger>
+      <Tabs defaultValue="education" className="mt-8">
+        <TabsList className="w-full max-w-md mx-auto grid grid-cols-4 mb-8 bg-muted/70 border border-border/50 p-1 rounded-lg">
+          <TabsTrigger value="education" className="rounded data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm">Education</TabsTrigger>
+          <TabsTrigger value="skills" className="rounded data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm">Skills</TabsTrigger>
+          <TabsTrigger value="careers" className="rounded data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm">Careers</TabsTrigger>
+          <TabsTrigger value="resources" className="rounded data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm">Resources</TabsTrigger>
         </TabsList>
         
         <TabsContent value="education">
