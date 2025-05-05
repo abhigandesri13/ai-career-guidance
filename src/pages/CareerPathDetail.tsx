@@ -15,7 +15,6 @@ import CareersTab from "@/components/career-path/CareersTab";
 import ResourcesTab from "@/components/career-path/ResourcesTab";
 import RelatedPaths from "@/components/career-path/RelatedPaths";
 import AssessmentCTA from "@/components/career-path/AssessmentCTA";
-import CareerFlowChart from "@/components/career-path/CareerFlowChart";
 
 const CareerPathDetail = () => {
   const { pathId } = useParams();
@@ -56,12 +55,6 @@ const CareerPathDetail = () => {
         jobProspects={pathData.jobProspects}
         entryRequirements={pathData.entryRequirements}
       />
-      
-      {/* Career Flow Chart */}
-      <div className="mt-8 mb-10">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Career Progression Path</h2>
-        <CareerFlowChart pathType={pathId} />
-      </div>
       
       {/* Detailed Content */}
       <Tabs defaultValue="education">
