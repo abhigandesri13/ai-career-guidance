@@ -48,7 +48,7 @@ const Home = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold tracking-tighter text-brand-blue-600">How CareerCompass Works</h2>
+            <h2 className="text-3xl font-bold tracking-tighter text-brand-blue-600">How AI Career Guidance Works</h2>
             <p className="mt-2 text-muted-foreground">Three simple steps to discover your ideal career path</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

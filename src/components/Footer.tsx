@@ -40,8 +40,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-3 text-foreground/80">Contact</h3>
             <ul className="space-y-2 text-sm">
-              <li className="text-muted-foreground">Email: info@careercompass.com</li>
-              <li className="text-muted-foreground">Phone: +91 1234567890</li>
+              <li className="text-muted-foreground">Email: abhigandesrigmail.com</li>
+              <li className="text-muted-foreground">Phone: +91 7661950021</li>
             </ul>
           </div>
         </div>

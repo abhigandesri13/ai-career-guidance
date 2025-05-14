@@ -25,12 +25,12 @@ const initialMessages: Message[] = [
 ];
 
 const sampleQuestions = [
-  "What are the different streams available after 10th?",
-  "Tell me about engineering career paths and entrance exams",
-  "What are the career options in medical field?",
-  "Explain commerce stream career opportunities and scope",
-  "What are the best courses in arts/humanities stream?",
-  "Tell me about vocational courses after 10th"
+  "What are the streams after 10th?",
+  "Tell me about engineering career paths",
+  "What are career options in medical?",
+  "Explain commerce career opportunities",
+  "What are the courses in arts stream?",
+  "Tell me about vocational courses"
 ];
 
 // CareerBot component
@@ -204,7 +204,9 @@ const Chatbot = () => {
                   <BookCheck className="h-5 w-5 text-brand-blue-500" /> Popular Questions
                 </h3>
                 <div className="space-y-2">
-                  {sampleQuestions.map((question, index) => (
+                
+                      
+                    {sampleQuestions.map((question, index) => (
                     <Button 
                       key={index} 
                       variant="outline" 
@@ -244,11 +246,6 @@ const Chatbot = () => {
             </CardContent>
           </Card>
         </div>
-      </div>
-      
-      <div className="mt-8 text-center text-sm text-muted-foreground">
-        <p className="mb-2">Note: You'll need to add your OpenAI API key as an environment variable: <code>VITE_OPENAI_API_KEY</code></p>
-        <p>CareerBot provides guidance based on general information. Always verify important decisions with certified counselors.</p>
       </div>
     </div>
   );
